@@ -1,0 +1,113 @@
+/*** imports***/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/*** variables ***/
+:root {
+  /** typography **/
+  --font-family: 'Outfit', sans-serif;
+  /* font sizes */
+  --font-size-primary: 0.938rem; /*15px*/
+  --font-size-secondary: 1.438rem; /*23px*/
+  /* font-weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  /** colors **/
+  --color-font-primary: hsl(220, 15%, 55%); /*Grayish blue*/
+  --color-font-secondary: hsl(218, 44%, 22%); /*Dark Blue*/
+  --color-background-primary: hsl(0, 0%, 100%); /*white*/
+  --color-background-secondary: hsl(212, 45%, 89%); /*light gray*/
+  --color-attribution-link: hsl(216, 94%, 57%);
+  /** margins **/
+  --margin-qr-code-component: 5.25rem auto 2.55rem; /*36px auto 40.8px*/
+}
+
+@media (min-width: 992px) {
+  :root {
+    /** margins **/
+    --margin-qr-code-component: 9.5rem auto 7.85rem; /*152px auto 125.6px*/
+  }
+}
+
+/*** reset ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*** utilities ***/
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/*** base ***/
+body {
+  background-color: var(--color-background-secondary);
+  /* typography */
+  font-family: var(--font-family);
+  font-size: var(--font-size-primary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-font-primary);
+  /* display */
+  /*.flex-col-center*/
+  min-width: 20em; /*320px*/
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/*** components ***/
+/** QR Code Component **/
+.qr-code-component {
+  background-color: var(--color-background-primary);
+  width: 20rem; /*320px*/
+  padding: 1rem; /*16px*/
+  border-radius: 1.25rem; /*20px*/
+  box-shadow: 0 1rem 2rem -0.001rem rgba(123, 135, 157, 0.2);
+  margin: var(--margin-qr-code-component);
+  text-align: center;
+}
+
+.qr-code-component img {
+  border-radius: 0.625rem; /*10px*/
+}
+
+.qr-code-component figcaption {
+  padding: 1.22rem 0 1.5rem; /*19.52px 24px*/
+  /*.flex-col-center*/
+  gap: 0.975rem; /*15.6px*/
+}
+
+.qr-code-component h1 {
+  font-size: var(--font-size-secondary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-font-secondary);
+  line-height: 1.75rem; /*28px*/
+  letter-spacing: -0.023rem; /*-0.37px*/
+}
+
+.qr-code-component p {
+  padding-inline: 1.25rem; /*20px*/
+  line-height: 1.2rem; /*19.2px*/
+  letter-spacing: 0.011rem; /*0.17px*/
+}
+
+/** Challenge Attribution **/
+.challenge-attribution {
+  background-color: var(--color-background-primary);
+  width: 100vw;
+  padding: 0.2rem 0; /*3.2px 0*/
+  text-align: center;
+  color: var(--color-font-primary);
+}
+
+.challenge-attribution a {
+  color: var(--color-attribution-link);
+  text-decoration: none;
+}
